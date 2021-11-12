@@ -48,6 +48,34 @@ public static class Extensions
         return new Vector3(a.x, 0, a.y);
     }
 
+    public static Vector2 ToVector2XY(this Vector3 a)
+    {
+        return new Vector2(a.x, a.y);
+    }
+
+    public static Vector2 ToVector2XZ(this Vector3 a)
+    {
+        return new Vector2(a.x, a.z);
+    }
+
+    public static Vector3 Randomise(this Vector3 a)
+    {
+        return new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
+    }
+    public static Vector3 Randomise(this Vector3 a, float _magnitude)
+    {
+        return new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * _magnitude;
+    }
+
+    #endregion
+
+    #region Quaternion
+
+    public static Quaternion Randomise(this Quaternion q)
+    {
+        return new Quaternion(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+    }
+
     #endregion
 
 }
