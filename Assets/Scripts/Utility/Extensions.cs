@@ -109,6 +109,17 @@ public static class Extensions
     }
 
     /// <summary>
+    /// returns true if the magnitude of the vactor is smaller than the given magnitude
+    /// </summary>
+    /// <param name="a"></param>
+    /// <param name="magnitude"></param>
+    /// <returns></returns>
+    public static bool LessThan(this Vector3 a, float magnitude)
+    {
+        return a.sqrMagnitude < (magnitude * magnitude);
+    }
+
+    /// <summary>
     /// Returns a random unit Vector3
     /// </summary>
     /// <param name="a"></param>
