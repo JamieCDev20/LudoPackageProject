@@ -72,4 +72,36 @@ public static class Mathl
         return 0.33f * Sin(2.621f * Mathf.PI * x + -Mathf.PI) + (1.314f * x);
     }
 
+    /// <summary>
+    /// Will set checkAgainst equal to toCheck if toCheck is less and then return
+    /// </summary>
+    /// <param name="checkAgainst"></param>
+    /// <param name="toCheck"></param>
+    /// <returns></returns>
+    public static bool IfLessThenSet(ref float checkAgainst, float toCheck)
+    {
+        if(checkAgainst > toCheck)
+        {
+            checkAgainst = toCheck;
+            return true;
+        }
+        return false;
+    }
+
+    /// <summary>
+    /// Will set checkAgainst equal to toCheck if toCheck is more and then return
+    /// </summary>
+    /// <param name="checkAgainst"></param>
+    /// <param name="toCheck"></param>
+    /// <returns></returns>
+    public static bool IfMoreThenSet(ref float checkAgainst, float toCheck)
+    {
+        if (checkAgainst < toCheck)
+        {
+            checkAgainst = toCheck;
+            return true;
+        }
+        return false;
+    }
+
 }
