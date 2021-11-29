@@ -60,7 +60,7 @@ public static class Mathl
     /// <returns></returns>
     public static float SkewedSin(float x, float skew, int dir)
     {
-        return NormalisedSin(Mathf.PI * x + (Sin(x)*(skew/dir))) * dir;
+        return NormalisedSin(Mathf.PI * x + (Sin(x) * (skew / dir))) * dir;
     }
     /// <summary>
     /// A nice Sin wave for a bit of wobble at either end
@@ -80,9 +80,18 @@ public static class Mathl
     /// <returns></returns>
     public static bool IfLessThenSet(ref float checkAgainst, float toCheck)
     {
-        if(checkAgainst > toCheck)
+        if (checkAgainst > toCheck)
         {
             checkAgainst = toCheck;
+            return true;
+        }
+        return false;
+    }
+    public static bool IfLessThenSet(ref float checkAgainst, Vector3 toCheck)
+    {
+        if (checkAgainst * checkAgainst > toCheck.sqrMagnitude)
+        {
+            checkAgainst = toCheck.magnitude;
             return true;
         }
         return false;
@@ -99,6 +108,15 @@ public static class Mathl
         if (checkAgainst < toCheck)
         {
             checkAgainst = toCheck;
+            return true;
+        }
+        return false;
+    }
+    public static bool IfMoreThenSet(ref float checkAgainst, Vector3 toCheck)
+    {
+        if (checkAgainst * checkAgainst < toCheck.sqrMagnitude)
+        {
+            checkAgainst = toCheck.magnitude;
             return true;
         }
         return false;
